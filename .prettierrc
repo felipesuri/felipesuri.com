@@ -1,11 +1,9 @@
 {
-  "editor.formatOnSave": true,
-  "endOfLine": "lf",
   "printWidth": 90,
   "arrowParens": "avoid",
-  "semi": true,
+  "semi": false,
   "tabWidth": 2,
-  "singleQuote": false,
+  "singleQuote": true,
   "bracketSpacing": true,
   "useTabs": false
 }
