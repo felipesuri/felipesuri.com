@@ -1,7 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
-export default function HTML(props) {
+interface Props {
+  htmlAttributes: {}
+  headComponents: []
+  bodyAttributes: {}
+  preBodyComponents: []
+  body: string
+  postBodyComponents: []
+}
+
+export default function HTML(props: Props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
@@ -15,21 +24,52 @@ export default function HTML(props) {
         <link
           href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Noto+Sans&family=Open+Sans:wght@300&family=Poppins:wght@300;400&family=Roboto:wght@500;700&display=swap"
           rel="stylesheet"
-        ></link>
+        />
 
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-        {props.preBodyComponents}
-        <div
-          key={`body`}
-          id="___gatsby"
-          dangerouslySetInnerHTML={{ __html: props.body }}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                window.__onThemeChange = function() {};
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  usedTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+                var usedTheme;
+                try {
+                  usedTheme = localStorage.getItem('theme');
+                } catch (err) { }
+                window.__setTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                    localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
+                const userHasDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (userHasDarkMode) {
+                  setTheme(usedTheme || 'theme-dark');
+                } else {
+                  setTheme(usedTheme || 'theme-light');
+                }
+              })();
+            `,
+          }}
         />
+
+        {props.preBodyComponents}
+
+        <noscript>Sem JavaScript isso aqui não funciona :/</noscript>
+
+        <div key="body" id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}
       </body>
     </html>
-  );
+  )
 }
 
 HTML.propTypes = {
@@ -39,4 +79,4 @@ HTML.propTypes = {
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
   postBodyComponents: PropTypes.array,
-};
+}
