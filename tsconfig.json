@@ -11,6 +11,7 @@
     "strict": true,
     "baseUrl": "./src",
     "paths": {
+      "*": ["types/*.d.ts"],
       "components/*": [
         "components/*"
       ],
