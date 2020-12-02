@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
+import * as V from './variables'
+
 export default createGlobalStyle`
    * {
     margin: 0;
@@ -15,9 +17,29 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #373636;
+    /* background: #373636; */
+    background: #FFFEF7;
     line-height: 1;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --bg: ${V.Color.white};
+    --bgSolid: ${V.Color.whiteSolid};
+    --bgSecondary: ${V.Color.grayWhite};
+    --borderColor: ${V.Color.grayWhite};
+    --highlightColor: ${V.Color.blue};
+    --primaryColor: ${V.Color.black};
+    --secondaryColor: ${V.Color.gray};
+    --boxShadow: rgba(18, 18, 18, .12);
+  }
+
+  body.theme-dark {
+    --bg: ${V.Color.grayDarker};
+    --bgSolid: ${V.Color.blackSolid};
+    --bgSecondary: ${V.Color.grayDark};
+    --borderColor: ${V.Color.grayDark};
+    --highlightColor: ${V.Color.blueLight};
+    --primaryColor: ${V.Color.white};
+    --secondaryColor: ${V.Color.grayLight};
+    --boxShadow: rgba(250, 250, 250, .12);
   }
 
   article, aside, details, figcaption, figure,

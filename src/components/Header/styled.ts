@@ -2,30 +2,24 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 
 export const HeaderWrapper = styled.aside`
-  text-transform: lowercase;
-  background: #070708;
-  border-bottom: 1px solid #9194ab;
+  width: 100%;
+  padding: 1rem 0;
+  top: 0;
   display: flex;
   position: fixed;
-  padding: 0.8rem 0;
-  top: 0;
-  width: 100%;
-  height: 4.063rem;
   justify-content: space-between;
+
+  opacity: 0.9;
+  background: #070708;
+  text-transform: lowercase;
 `
 
 export const HeaderGroup = styled.div`
-  margin: auto 100px;
   display: flex;
+  margin: auto 10rem;
   align-items: center;
 
   ${media.lessThan('large')`
-    margin: auto;
+    margin: auto 3rem;
   `}
-`
-
-export const HeaderSiteName = styled.h1`
-  font-size: 32px;
-  display: block;
-  color: #fff;
 `

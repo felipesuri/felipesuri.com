@@ -1,20 +1,20 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+
+import ComponentWithChildren from 'utils/component-with-children'
 
 import * as S from './styled'
 
-const ButtonLink = ({ children, to, direction }) => (
+interface Props extends ComponentWithChildren {
+  to: string
+  direction: string
+}
+
+const ButtonLink = ({ children, to, direction }: Props) => (
   <S.ButtonLinkWrapper>
     <S.ButtonLink cover direction={direction} duration={0.6} to={to} bg="#373636">
       {children}
     </S.ButtonLink>
   </S.ButtonLinkWrapper>
 )
-
-ButtonLink.propTypes = {
-  children: PropTypes.node.isRequired,
-  to: PropTypes.node.isRequired,
-  direction: PropTypes.node.isRequired,
-}
 
 export default ButtonLink

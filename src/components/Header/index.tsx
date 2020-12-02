@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Profile from 'components/Profile'
-import MenuLinks from 'components/MenuLinks'
+import Menu from './Menu'
+import Profile from './Profile'
 
 import * as S from './styled'
 
@@ -11,8 +11,9 @@ const Header = () => {
       <S.HeaderGroup>
         <Profile />
       </S.HeaderGroup>
+
       <S.HeaderGroup>
-        <MenuLinks />
+        <Menu />
       </S.HeaderGroup>
     </S.HeaderWrapper>
   )
