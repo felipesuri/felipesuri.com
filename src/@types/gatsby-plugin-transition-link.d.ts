@@ -25,7 +25,9 @@ declare module 'gatsby-plugin-transition-link/AniLink' {
 
 	interface AniLinkProps {
 		to: string;
-		direction?: string;
+    direction?: string;
+    cover?: bool;
+    bg?: string;
 		duration?: number;
 		top?: 'exit' | 'entry';
     entryOffset?: number;
