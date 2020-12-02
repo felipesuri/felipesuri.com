@@ -91,17 +91,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
-        head: false,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Felipe Suri`,
-        short_name: `Felipe Suri`,
+        name: `felipesuri`,
+        short_name: `felipesuri`,
         start_url: `/`,
         background_color: `#373636`,
         theme_color: `#000`,
