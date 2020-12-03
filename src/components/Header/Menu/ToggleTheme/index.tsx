@@ -25,7 +25,10 @@ const ToggleTheme = () => {
   }
 
   return (
-    <S.ToggleTheme active={!darkMode} onClick={onChange}>
+    <S.ToggleTheme
+      title={!darkTheme ? 'Mudar para tema escuro' : 'Mudar para tema claro'}
+      onClick={onChange}
+    >
       <Helmet>
         <body className={`${theme}`} />
       </Helmet>
