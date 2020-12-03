@@ -4,7 +4,7 @@ const queries = require('./src/utils/algolia-queries')
 
 module.exports = {
   siteMetadata: {
-    title: `FelipeSuri`,
+    title: `felipesuri`,
     description: `Meu blog feito para conversar sobre programação e engenharia de software.`,
     author: `@_felipesuri`,
     siteUrl: `https://felipesuri.com`,
