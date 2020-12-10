@@ -6,7 +6,7 @@ import PostList from 'components/PostList'
 import Layout from 'components/Layout'
 import SEO from 'components/seo'
 
-const IndexPage = () => (
+const HomePage = () => (
   <Layout>
     <SEO title="Página Inicial" noCreateThumb />
     <Author />
@@ -14,4 +14,4 @@ const IndexPage = () => (
   </Layout>
 )
 
-export default IndexPage
+export default HomePage

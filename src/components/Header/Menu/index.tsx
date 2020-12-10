@@ -25,6 +25,12 @@ const MenuLinks = () => (
       <S.MenuLinksItem>
         <ToggleTheme />
       </S.MenuLinksItem>
+
+      <S.MenuLinksItem>
+        <a target="_blank" rel="noreferrer" href="https://github.com/felipesuri">
+          <S.SiteIcon>F</S.SiteIcon>
+        </a>
+      </S.MenuLinksItem>
     </S.MenuLinksList>
   </S.MenuLinksWrapper>
 )

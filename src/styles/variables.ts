@@ -35,9 +35,17 @@ export const Height = {
 
 export const Color = {
   white: '#FFFEF7',
-  black: 'rgba(15, 15, 15, .95)',
-  whiteSolid: `#ffffff`,
-  blackSolid: `#000000`,
+  secondaryWhite: '#FFFCE5',
+  tertiaryWhite: '#FAF7E1',
+  quaternaryWhite: '#FAF5D4',
+
+  black: '#0F0F0F',
+  secondaryBlack: '#1A1A18',
+  tertiaryBlack: '#1D1D1D',
+  quaternaryBlack: '#212121',
+
+  whiteSolid: '#ffffff',
+  blackSolid: '#000000',
   blue: `#187888`,
   blueLight: `#a1ecf7`,
   grayDarker: `#1d1d1d`,

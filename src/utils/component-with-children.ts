@@ -1,5 +1,5 @@
-import { ReactChildren } from 'react'
+import { ReactElement } from 'react'
 
 export default interface ComponentWithChildren {
-  children: ReactChildren
+  children: ReactElement | ReactElement[]
 }

@@ -32,3 +32,19 @@ export const MenuLinksLink = styled(AniLink)`
     color: var(--purple);
   }
 `
+
+export const SiteIcon = styled.p`
+  color: #f2f2f2;
+  transition: color 0.5s;
+  font-family: 'Berkshire Swash', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+
+  &:hover {
+    color: var(--purple);
+  }
+
+  &.active {
+    color: var(--purple);
+  }
+`

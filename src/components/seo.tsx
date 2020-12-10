@@ -1,9 +1,24 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, title, image, noCreateThumb }) {
+interface Props {
+  description?: string
+  lang: string
+  meta?: {}
+  title: string
+  noCreateThumb?: boolean
+  image?: string
+}
+
+function SEO({
+  description,
+  lang = 'pt-br',
+  meta = [],
+  title,
+  image,
+  noCreateThumb,
+}: Props) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,18 +33,18 @@ function SEO({ description, lang, meta, title, image, noCreateThumb }) {
         }
       }
     `
-  );
+  )
 
-  const metaDescription = description || site.siteMetadata.description;
-  const url = site.siteMetadata.siteUrl;
-  const thumbGeneratorUrl = site.siteMetadata.thumbGeneratorUrl;
-  const cover = "assets/img/facadeImage.png";
+  const metaDescription = description || site.siteMetadata.description
+  const url = site.siteMetadata.siteUrl
+  const { thumbGeneratorUrl } = site.siteMetadata
+  const cover = 'assets/img/facadeImage.png'
 
-  let ogImage = `${url}/${image || cover}`;
+  let ogImage = `${url}/${image || cover}`
 
   if (!image && !noCreateThumb) {
-    const newTitle = title.split(" ").join("%20");
-    ogImage = `${thumbGeneratorUrl}/api/thumbnail.png?title=${newTitle}`;
+    const newTitle = title.split(' ').join('%20')
+    ogImage = `${thumbGeneratorUrl}/api/thumbnail.png?title=${newTitle}`
   }
 
   return (
@@ -82,21 +97,7 @@ function SEO({ description, lang, meta, title, image, noCreateThumb }) {
         },
       ].concat(meta)}
     />
-  );
+  )
 }
 
-SEO.defaultProps = {
-  lang: `pt-BR`,
-  meta: [],
-  description: ``,
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-  noCreateThumb: PropTypes.bool,
-};
-
-export default SEO;
+export default SEO

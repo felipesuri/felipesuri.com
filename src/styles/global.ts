@@ -19,28 +19,32 @@ export default createGlobalStyle`
   body {
     line-height: 1;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --backgroundColor: ${V.Color.white};
+    --primaryColor: ${V.Color.black};
+    --secondaryColor: ${V.Color.secondaryBlack};
+
     --bg: ${V.Color.white};
     --bgSolid: ${V.Color.whiteSolid};
     --bgSecondary: ${V.Color.grayWhite};
     --borderColor: ${V.Color.grayWhite};
     --highlightColor: ${V.Color.blue};
-    --primaryColor: ${V.Color.black};
-    --secondaryColor: ${V.Color.gray};
     --boxShadow: rgba(18, 18, 18, .12);
     
     --whiteSolid: ${V.Color.whiteSolid};
     --purple: ${V.Color.purple};
-    background: var(--bg);
+    background: var(--backgroundColor);
   }
 
   body.theme-dark {
+    --backgroundColor: ${V.Color.tertiaryBlack};
+    --primaryColor: ${V.Color.white};
+    --secondaryColor: ${V.Color.secondaryWhite};
+
     --bg: ${V.Color.grayDarker};
     --bgSolid: ${V.Color.blackSolid};
     --bgSecondary: ${V.Color.grayDark};
     --borderColor: ${V.Color.grayDark};
     --highlightColor: ${V.Color.blueLight};
-    --primaryColor: ${V.Color.white};
-    --secondaryColor: ${V.Color.grayLight};
     --boxShadow: rgba(250, 250, 250, .12);
   }
 
